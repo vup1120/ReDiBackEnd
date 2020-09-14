@@ -6,20 +6,20 @@ def split_consecutive_duplicates(givenlist):
      :param givenlist:
          list object
     """
-    split = []
-    tmp = []
+    final = []
+    sublist = []
     # Split the consecutive duplicates from the given list into sublists
     for i in range(len(givenlist)):
         if i == 0:
-            tmp = [givenlist[i]]
-            split.append(tmp)
+            sublist = [givenlist[i]]
+            final.append(sublist)
         elif givenlist[i] != givenlist[i-1]:
-            tmp = [givenlist[i]]
-            split.append(tmp)
+            sublist = [givenlist[i]]
+            final.append(sublist)
         elif givenlist[i] == givenlist[i-1]:
-            tmp.append(givenlist[i])
+            sublist.append(givenlist[i])
 
-    return split
+    return final
 
 
 input_list = [0, 0, 1,1,1, 2, 3, 4, 4, 6, 6, 6, 8, 4, 4]
