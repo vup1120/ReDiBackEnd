@@ -15,10 +15,11 @@ MIN_DIGITS = 2
 
 
 def check_length(key):
-    if len(key) >= MIN_LENGTH:  # place numbers inside a constant so you can easily change this later without having to go through the entire code
+    if len(key) >= MIN_LENGTH:
         return True
     else:
         return False
+
 
 def check_uppercase(key):
     if sum([i.isupper() for i in key]) >= MIN_UPPERCASE:
@@ -26,25 +27,27 @@ def check_uppercase(key):
     else:
         return False
 
+
 def check_digits(key):
     if sum([i.isdigit() for i in key]) >= MIN_DIGITS:
         return True
     else:
         return False
 
+
 def check_consecutive_digits(key):
     check = [i.isdigit() for i in key]
     for i in range(len(check) - 1):
-        tmp = check[i] + check[i + 1]  # this is genius!
+        tmp = check[i] + check[i + 1]
         while tmp > 1:
             return False
     return True
 
 
 def main():
-'''
-check if the user-input password fits the criteria
-'''
+    '''
+    check if the user-input password fits the criteria
+    '''
     while True:
         try:
             key = str(input("Enter your new password: "))
@@ -69,13 +72,19 @@ check if the user-input password fits the criteria
             print("Invalid Password. Can’t contain two or more consecutive digits")
 
 
-class PassWordNotStrongLength(Exception):  # default for all exceptions
+class PassWordNotStrongLength(Exception):
     pass
-class PassWordNotStrongUpperCase(Exception):  # default for all exceptions
+
+
+class PassWordNotStrongUpperCase(Exception):
     pass
-class PassWordNotStrongTwoDigits(Exception):  # default for all exceptions
+
+
+class PassWordNotStrongTwoDigits(Exception):
     pass
-class PassWordNotStrongNoConsecutive(Exception):  # default for all exceptions
+
+
+class PassWordNotStrongNoConsecutive(Exception):
     pass
 
 main()
