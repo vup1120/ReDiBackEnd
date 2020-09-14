@@ -1,3 +1,5 @@
+# A function to put consecutive duplicates of a given list into sub-lists
+
 def split_consecutive_duplicates(givenlist):
     """
      Returns the consecutive duplicates of a given list into sublists
@@ -22,7 +24,7 @@ def split_consecutive_duplicates(givenlist):
             final.append(split[i])
         elif split[i] != split[i-1]:
             final.append(split[i])
-        elif split[i] == split[i-1]: # skip if it equals to the previous sublist
+        elif split[i] == split[i-1]:  # skip if it equals to the previous sublist
             continue
     return final
 
