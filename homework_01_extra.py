@@ -13,7 +13,7 @@ def check_uppercase(key):
 
 
 def check_digits(key):
-    if sum([i.isdigit() for i in key]) > 0:
+    if sum([i.isdigit() for i in key]) > 1:
         return True
     else:
         return False
